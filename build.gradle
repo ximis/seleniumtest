@@ -9,6 +9,8 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    maven { url 'https://jitpack.io' }
+
 }
 
 dependencies {
@@ -16,9 +18,13 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:5.6.2"){
         exclude group: 'commons-collections', module: 'commons-collections'
     }
+
+    implementation "com.github.appium:java-client:7.3.0"
+
+
     compile (
             "org.seleniumhq.selenium:selenium-java:3.141.59",
-            
+
     )
 
 
