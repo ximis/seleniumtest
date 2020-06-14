@@ -74,6 +74,14 @@ public class BasePage {
         driver.findElement(by).click();
     }
 
+    public void clickUntil(By by, By nextBy){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+        do{
+            driver.findElement(by).click();
+        } while (find(nextBy) !=null);
+
+    }
+
     public List<String> findElementsText(By  by) {
 //        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
         List<String> res = new LinkedList<>();
@@ -96,8 +104,12 @@ public class BasePage {
     }
 
     public MobileElement find(By by) {
+        try{
+            return driver.findElement(by);
+        } catch (Exception e){
+            return null;
+        }
 
-        return driver.findElement(by);
     }
 
     public List<MobileElement> finds(By by) {
@@ -109,6 +121,11 @@ public class BasePage {
     public void scroll(int sx, int sy, int dx, int dy){
 
         touchAction.press(PointOption.point(sx, sy)).waitAction().moveTo(PointOption.point(dx,dy)).release().perform();
+//        try {
+//            TimeUnit.SECONDS.sleep(1);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
     }
 
     public void scrollDown(){
@@ -116,6 +133,7 @@ public class BasePage {
         int height = driver.manage().window().getSize().getHeight();
 
         scroll(width* 1/2, height * 3/4, width * 1/2, height * 1/4);
+
     }
     public void scrollDown2(){
 

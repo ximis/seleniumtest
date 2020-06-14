@@ -26,8 +26,10 @@ public class Report extends BasePage{
 //        click(By.xpath("//*[@text='"+user+"']/../../../android.widget.FrameLayout[1]"));
 //
 //        click(By.xpath("//*[@text='确定']"));
-        click(By.xpath("//*[@text='提交']"));
 
+        click(By.xpath("//android.view.View[@content-desc=\"提交\"]\n"));
+//        clickUntil(By.xpath("//*[@text='提交']"),
+//                By.xpath("//android.view.View[@content-desc='今日工作']/following-sibling::android.view.View[1]"));
         return this;
     }
 
@@ -52,7 +54,8 @@ public class Report extends BasePage{
 
     public Map<String, String> getDailyReport(){
         Map<String, String> data = new HashMap<>();
-
+        ;
+        find(By.xpath("//android.view.View[@content-desc=\"我的日报\"]"));
         data.put("now",find(By.xpath("//android.view.View[@content-desc='今日工作']/following-sibling::android.view.View[1]"))
                 .getAttribute("content-desc"));
         data.put("next",find(By.xpath("//android.view.View[@content-desc='明日计划']/following-sibling::android.view.View[1]"))
