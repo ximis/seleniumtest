@@ -1,22 +1,15 @@
 package test_app.xueqiu.page;
 
-import io.appium.java_client.MobileElement;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
-import java.net.MalformedURLException;
 
 public class MainPage extends BasePage {
 
-    public MainPage() throws MalformedURLException {
-        super();
-    }
-
-
-
     public SearchPage toSearch(){
 
-        MobileElement el1 = (MobileElement) driver.findElementById("com.xueqiu.android:id/home_search");
-        el1.click();
+//        MobileElement el1 = (MobileElement) driver.findElementById("com.xueqiu.android:id/home_search");
+//        el1.click();
+        click(By.id("com.xueqiu.android:id/home_search"));
         return new SearchPage(driver);
     }
 

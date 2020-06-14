@@ -1,5 +1,6 @@
 package test_app.xueqiu.testcases;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import test_app.xueqiu.page.MainPage;
@@ -36,5 +37,8 @@ class MarketPageTest {
         assertEquals(marketPage.getStocksSize(),3);
     }
 
-
+    @AfterAll
+    public void clear(){
+        marketPage.quit();
+    }
 }

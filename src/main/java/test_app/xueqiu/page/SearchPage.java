@@ -25,17 +25,19 @@ public class SearchPage extends BasePage{
 
     public List<String> getSearchList(){
         List<String> nameList=new ArrayList<>();
-        for(Object element: driver.findElements(nameLocator)){
-            nameList.add(((WebElement)element).getText());
-        }
+//        for(Object element: driver.findElements(nameLocator)){
+//            nameList.add(((WebElement)element).getText());
+//        }
 
         //todo: stream lamda优化
+        driver.findElements(nameLocator).forEach(element -> nameList.add(element.getText()));
 
         return nameList;
     }
 
     public double getPrice(){
-        driver.findElement(nameLocator).click();
+//        driver.findElement(nameLocator).click();
+        click(nameLocator);
         return Double.valueOf(driver.findElement(By.id("current_price")).getText());
     }
 
