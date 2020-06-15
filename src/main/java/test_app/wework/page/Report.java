@@ -47,7 +47,7 @@ public class Report extends BasePage{
 //        click(By.xpath("//*[@text='"+user+"']/../../../android.widget.FrameLayout[1]"));
 //
 //        click(By.xpath("//*[@text='确定']"));
-        click(By.xpath("//*[@text='提交']"));
+        click(By.xpath("//android.view.View[@content-desc=\"提交\"]\n"));
 
         return this;
     }

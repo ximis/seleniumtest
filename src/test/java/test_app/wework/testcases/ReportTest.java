@@ -27,7 +27,7 @@ class ReportTest {
         String now = "1222";
         String next = "下一步";
         String others = "其他的";
-        String user = "test(ss)";
+        String user = "test";
         Map<String, String> map = report.addDailyReprot(now,next,others,user).getDailyReport();
         assertTrue(map.get("now").equals(now));
         assertTrue(map.get("next").equals(next));
@@ -37,6 +37,15 @@ class ReportTest {
 
     @Test
     void addWeeklyReport() {
+        String now = "1222";
+        String next = "下一步";
+        String others = "其他的";
+        String user = "test";
+        Map<String, String> map = report.addWeeklyReport(now,next,others,user).getWeeklyReport();
+        assertTrue(map.get("now").equals(now));
+        assertTrue(map.get("next").equals(next));
+        assertTrue(map.get("others").equals(others));
+        assertTrue(map.get("user").contains(user));
     }
 
     @AfterAll
