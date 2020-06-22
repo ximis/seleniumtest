@@ -3,19 +3,19 @@ package test_app.wework.testcases;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import test_app.wework.page.MainPage;
+import test_app.wework.page.MainPageApp;
 import test_app.wework.page.WaitToBeDone;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class WaitToBeDoneTest {
-    static MainPage mainPage;
+    static MainPageApp mainPage;
     static WaitToBeDone waitToBeDone;
 
     @BeforeAll
     static void setUp() {
-        mainPage = new MainPage();
+        mainPage = new MainPageApp();
         waitToBeDone = mainPage.toWaitToBeDone();
     }
 

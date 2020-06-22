@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 
 import java.util.List;
 
-public class WaitToBeDone extends BasePage{
+public class WaitToBeDone extends AppBasePage {
     public WaitToBeDone(AndroidDriver<MobileElement> driver) {
         super(driver);
     }

@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import test_framework.BasePage;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -15,14 +16,14 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class BasePage {
+public class AppBasePage extends BasePage {
 
     AndroidDriver<MobileElement> driver = null;
     WebDriverWait wait = null;
     TouchAction touchAction = null;
 
 
-    public BasePage() {
+    public AppBasePage() {
 
         startApp("com.tencent.wework", ".launch.WwMainActivity");
 //        startApp("com.tencent.wework", ".launch.LaunchSplashActivity");
@@ -55,7 +56,7 @@ public class BasePage {
         touchAction = new TouchAction(driver);
     }
 
-    public BasePage(AndroidDriver driver) {
+    public AppBasePage(AndroidDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, 10);
         touchAction = new TouchAction(driver);

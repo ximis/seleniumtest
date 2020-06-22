@@ -18,6 +18,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:5.6.2"){
         exclude group: 'commons-collections', module: 'commons-collections'
     }
+    testImplementation("org.junit.platform:junit-platform-launcher:1.6.2")
 
     implementation "com.github.appium:java-client:7.3.0"
 
@@ -26,6 +27,8 @@ dependencies {
             "org.seleniumhq.selenium:selenium-java:3.141.59",
 
     )
+    compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-yaml', version: '2.11.0'
+
 
 
 }

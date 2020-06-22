@@ -1,0 +1,6 @@
+steps:
+  - action: get
+    url: https://ceshiren.com
+  - click: {linktext: 最新}
+  - click: {linktext: 热门}
+

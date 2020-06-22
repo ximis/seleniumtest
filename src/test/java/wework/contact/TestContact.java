@@ -4,17 +4,17 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import wework.page.Contactpage;
-import wework.page.MainPage;
+import wework.page.MainPageWeb;
 
 import java.util.concurrent.TimeUnit;
 
 public class TestContact {
-    static MainPage main;
+    static MainPageWeb main;
     static Contactpage contact;
 
     @BeforeAll
     static void beforeAll(){
-        main=new MainPage();
+        main=new MainPageWeb();
         contact=main.toConcat();
     }
     @Test

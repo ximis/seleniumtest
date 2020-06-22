@@ -10,7 +10,7 @@ import java.net.URL;
 import java.net.URLDecoder;
 import java.time.Duration;
 
-public class Contactpage extends BasePage{
+public class Contactpage extends WebBasePage {
 
     public Contactpage(RemoteWebDriver driver){
         super(driver);

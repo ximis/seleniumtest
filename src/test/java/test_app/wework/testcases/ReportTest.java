@@ -3,7 +3,7 @@ package test_app.wework.testcases;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import test_app.wework.page.MainPage;
+import test_app.wework.page.MainPageApp;
 import test_app.wework.page.Report;
 
 import java.net.MalformedURLException;
@@ -13,12 +13,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ReportTest {
 
-    static MainPage mainPage;
+    static MainPageApp mainPage;
     static Report report;
 
     @BeforeAll
     static void beforeAll() throws MalformedURLException {
-        mainPage = new MainPage();
+        mainPage = new MainPageApp();
         report = mainPage.toWorkBench().toReport();
     }
 

@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Report extends BasePage{
+public class Report extends AppBasePage {
     public Report(AndroidDriver<MobileElement> driver) {
         super(driver);
     }

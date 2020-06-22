@@ -2,16 +2,16 @@ package test_app.wework.page;
 
 import org.openqa.selenium.By;
 
-public class MainPage extends BasePage{
-    public MainPage() {
+public class MainPageApp extends AppBasePage {
+    public MainPageApp() {
         super();
     }
 
-    public AgendaPage toAgenda(){
+    public AgendaPageApp toAgenda(){
 
         click(By.xpath("//*[@text='日程']"));
 
-        return new AgendaPage(driver);
+        return new AgendaPageApp(driver);
     }
 
     public WaitToBeDone toWaitToBeDone(){

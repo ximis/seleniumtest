@@ -4,7 +4,7 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 
-public class WorkBench extends BasePage{
+public class WorkBench extends AppBasePage {
     public WorkBench(AndroidDriver<MobileElement> driver) {
         super(driver);
     }

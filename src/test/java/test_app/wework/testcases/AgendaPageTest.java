@@ -3,8 +3,8 @@ package test_app.wework.testcases;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import test_app.wework.page.AgendaPage;
-import test_app.wework.page.MainPage;
+import test_app.wework.page.AgendaPageApp;
+import test_app.wework.page.MainPageApp;
 
 import java.net.MalformedURLException;
 
@@ -12,12 +12,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class AgendaPageTest {
 
-    static MainPage mainPage;
-    static AgendaPage agendaPage;
+    static MainPageApp mainPage;
+    static AgendaPageApp agendaPage;
 
     @BeforeAll
     static void beforeAll() throws MalformedURLException {
-        mainPage = new MainPage();
+        mainPage = new MainPageApp();
         agendaPage = mainPage.toAgenda();
     }
 

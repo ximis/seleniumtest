@@ -7,13 +7,13 @@ import org.openqa.selenium.By;
 import java.util.Date;
 import java.util.List;
 
-public class AgendaPage extends BasePage{
-    public AgendaPage(AndroidDriver<MobileElement> driver) {
+public class AgendaPageApp extends AppBasePage {
+    public AgendaPageApp(AndroidDriver<MobileElement> driver) {
         super(driver);
     }
 
     //day time: 目前支持日期的
-    public AgendaPage add(String name, Date date){
+    public AgendaPageApp add(String name, Date date){
 
         if(date != null){
             // todo:
@@ -37,7 +37,7 @@ public class AgendaPage extends BasePage{
         click(By.id("gyb"));
     }
 
-    public AgendaPage deleteRecords(){
+    public AgendaPageApp deleteRecords(){
 
         while (finds(By.id("gg_")).size()>0){
             click(By.id("gg_"));

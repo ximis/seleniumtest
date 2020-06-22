@@ -1,0 +1,35 @@
+name: xxx
+description: xxx
+steps:
+  - id: locator
+
+  #基本自动化领域模型
+  #业务模型
+  #通用方法
+#  - method: click
+#    params: [1, 2]
+#
+#  #添加参数调用，让方法的参数更有意义
+#  - method: click
+#      params:
+#        by: id
+#        value: search
+#
+#  #简化格式
+#  - by: id
+#    locator: search
+#    action: click
+
+  #进一步简化； 如果by只是单个的字符串，可以进一步简化
+#  - id: search
+#    action: click
+  - id: search
+    sendkeys: " test , safsdf"
+
+  - click: { id: search}
+
+  - id: search
+    action: getText
+    key: search_text
+
+
