@@ -26,4 +26,12 @@ class BasePageTest {
         System.out.println(mapper.writeValueAsString(uiAuto));
 
     }
+
+
+    @Test
+    void runPOM() {
+        basePage.loadPages("/Users/prsu/learn/seleniumtest/src/main/resources/test_framework");
+        UIAuto uiAuto =  basePage.load("/test_framework/po.yaml");
+        basePage.run(uiAuto);
+    }
 }

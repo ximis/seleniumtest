@@ -1,0 +1,22 @@
+name: main
+methods:
+  toSearch:
+    - click: {id: xxx}
+    - click: {xpath: ddd}
+    - id: xxx
+      sendKeys: "112 222"
+  search:
+    - click: {id: xxx}
+    - click: {xpath: ddd}
+    - id: xxx
+      sendKeys: "112 222"
+  init:
+    - action: get
+      url: https://ceshiren.com
+
+  visit:
+      - click: {linktext: 开源项目}
+      - click: {linktext: 热门}
+
+
+

@@ -87,6 +87,31 @@ public class WebBasePage extends BasePage {
     }
 
 
+    public String getattribute(By by, String attr){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+        return driver.findElement(by).getAttribute(attr);
+    }
+
+    @Override
+    public String getattribute(HashMap<String, Object> map) {
+        super.getattribute(map);
+
+        String attr = (String)map.get("getattribute");
+
+        By by = null;
+        if(map.containsKey("id")){
+            by = By.id((String)map.get("id"));
+        }else if(map.containsKey("linktext")){
+            by = By.linkText((String)map.get("linktext"));
+        }else if(map.containsKey("xpath")){
+            by = By.xpath((String)map.get("xpath"));
+        }
+
+        String data = getattribute(by, attr);
+        System.out.println("get attr: "+ attr + ":"+data);
+        return data;
+    }
+
     @Override
     public void click(HashMap<String, Object> data) {
         super.click(data);
@@ -106,11 +131,16 @@ public class WebBasePage extends BasePage {
     }
 
 
+
     @Override
     public void action(HashMap<String, Object> map) {
         super.action(map);
-        if(map.get("action").toString().equals("get")){
-            driver.get(map.get("url").toString());
+        if(map.containsKey("action")){
+            String action = map.get("action").toString().toLowerCase();
+            if(action.equals("get")){
+                driver.get(map.get("url").toString());
+            }
         }
+
     }
 }

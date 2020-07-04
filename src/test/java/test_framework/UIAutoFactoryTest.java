@@ -2,13 +2,12 @@ package test_framework;
 
 import org.junit.jupiter.api.Test;
 
-class FactoryTest {
+class UIAutoFactoryTest {
 
     @Test
     void create() {
-        BasePage basePage = Factory.create("web");
+        BasePage basePage = UIAutoFactory.create("web");
         UIAuto uiAuto = basePage.load("/test_framework/webauto.yaml");
         basePage.run(uiAuto);
-
     }
 }

@@ -1,0 +1,34 @@
+#name: xxx
+#description: xxx
+#steps:
+#  - action: get
+#    url: https://ceshiren.com
+#  - click: {linktext: 最新}
+#  - click: {linktext: 热门}
+#  - getattribute: href
+#    linktext: 最新
+
+#- action: MainPage.toSearch
+#  page: SearchPage
+#- search: keyword
+
+#- page: MainPage
+#- action: toSearch
+#- page: SearchPage
+#- search: keyword
+
+#- action: MainPage
+#- action: toSearch
+#- action: SearchPage
+#- action: search
+
+steps:
+  - page: main
+    action: init
+
+  - page: main
+    action: visit
+
+  - page: contact
+    action: search
+

@@ -1,9 +1,7 @@
-name: xxx
-description: xxx
 steps:
   - action: get
     url: https://ceshiren.com
-  - click: {linktext: 最新}
+  - click: {linktext: 开源项目}
   - click: {linktext: 热门}
   - getattribute: href
     linktext: 最新
